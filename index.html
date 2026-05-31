@@ -279,7 +279,8 @@ async function sendMessage(text) {
     const data = await res.json();
     removeTyping();
     if (!res.ok) {
-      addMessage("assistant", "Sorry, something went wrong. Please try again.");
+      addMessage("assistant", "Error: " + JSON.stringify(data));
+
     } else {
       const reply = data.content?.find(b => b.type === "text")?.text || "Sorry, try again.";
       addMessage("assistant", reply);
