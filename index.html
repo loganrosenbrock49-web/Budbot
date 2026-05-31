@@ -455,7 +455,7 @@ async function sendMessage(text) {
     }
   } catch(e) {
     removeTyping();
-    addMessage("assistant", "Connection error. Please try again.");
+    addMessage("assistant", "Error: " + e.message + " | URL: " + "/api/chat");
   } finally {
     loading = false;
     updateSendBtn();
