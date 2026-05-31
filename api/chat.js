@@ -15,9 +15,10 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify(req.body),
     });
+
     const data = await response.json();
     res.status(response.status).json(data);
   } catch (e) {
-    res.status(500).json({ error: e.message });
+    res.status(500).json({ error: e.message, key_exists: !!process.env.ANTHROPIC_API_KEY });
   }
 }
