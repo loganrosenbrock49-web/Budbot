@@ -314,8 +314,8 @@ const SYSTEM_PROMPT = `You are Buddi, a warm and knowledgeable AI budtender for 
 8. Always recommend consulting a doctor for medical questions
 9. Keep responses to 2-4 sentences unless they need more detail
 10. When someone asks about deals, mention you can send exclusive deals to their phone
-Never recommend illegal activity. You represent a premium dispensary experience.`;
-
+Never recommend illegal activity. You represent a premium dispensary experience.
+CRITICAL: NEVER make up or invent phone numbers, addresses, staff names, hours, or any contact information. If a customer asks for contact info, tell them to check the dispensary website or ask staff directly.`;
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   const el = document.getElementById(id);
