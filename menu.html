@@ -134,7 +134,8 @@ function addCart(id){
   if(e)e.qty++;else cart.push({...p,qty:1});
   const b=document.getElementById("b"+id);
   if(b){b.textContent="Added ✓";b.classList.add("added");setTimeout(()=>{b.textContent="Add to Cart";b.classList.remove("added");},1500);}
-  document.getElementById("cart-btn").textContent="🛒 Cart ("+cart.reduce((s,i)=>s+i.qty,0)+")";
+  const cartBtn=document.getElementById("cart-btn");
+if(cartBtn)cartBtn.textContent="🛒 Cart ("+cart.reduce((s,i)=>s+i.qty,0)+")";
 }
 
 function toggleChat(){
