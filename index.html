@@ -442,7 +442,7 @@ async function sendMessage(text) {
       body: JSON.stringify({
         model: "claude-sonnet-4-6",
         max_tokens: 1000,
-        system: SYSTEM_PROMPT + `\n\nCustomer name: ${userName}. Phone: ${userPhone}.`,
+        system: SYSTEM_PROMPT + `\n\nCustomer name: ${userName}.`,
         messages: messages.slice(0, -1).concat([{ role: "user", content: userText }])
       })
     });
