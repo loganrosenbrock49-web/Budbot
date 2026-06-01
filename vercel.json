@@ -1,4 +1,8 @@
-{}
+{
+  "rewrites": [
+    { "source": "/menu", "destination": "/menu.html" }
+  ]
+}
 
 
 
