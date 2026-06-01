@@ -176,7 +176,7 @@ async function psend(){
       body:JSON.stringify({
         model:"claude-sonnet-4-6",
         max_tokens:200,
-        system:"You are Buddi, an AI budtender. Keep answers to 1-3 sentences. Current menu:\n"+menu,
+        system:"You are Buddi, an AI budtender. Keep answers to 1-3 sentences. Current menu:\n"+menu+"\n\nCustomer's current cart: "+(cart.length===0?"Empty":cart.map(i=>i.name+" x"+i.qty+" ($"+i.price*i.qty+")").join(", "))+". Total: $"+cart.reduce((s,i)=>s+i.price*i.qty,0).toFixed(2),
         messages:msgs.slice(0,-1).concat([{role:"user",content:txt}])
       })
     });
