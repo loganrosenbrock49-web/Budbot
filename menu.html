@@ -187,7 +187,16 @@ async function psend(){
   }catch(e){addMsg("assistant","Connection error.");}
   finally{loading=false;}
 }
-
+function showCart(){
+  if(cart.length===0){alert("Your cart is empty!");return;}
+  const items=cart.map(i=>`${i.name} x${i.qty} — $${i.price*i.qty}`).join("\n");
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  if(confirm("YOUR CART:\n\n"+items+"\n\nTotal: $"+total.toFixed(2)+"\n\nTap OK to place order.")){
+    alert("Order placed! You'll get an SMS confirmation soon.\n\n(SMS coming soon)");
+    cart=[];
+    document.getElementById("cart-btn").textContent="🛒 Cart (0)";
+  }
+}
 render("all");
 </script>
 </body>
